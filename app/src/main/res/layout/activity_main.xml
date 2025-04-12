@@ -28,6 +28,8 @@
         android:layout_width="75dp"
         android:layout_height="62dp"
         android:visibility="gone"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/golden_yellow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

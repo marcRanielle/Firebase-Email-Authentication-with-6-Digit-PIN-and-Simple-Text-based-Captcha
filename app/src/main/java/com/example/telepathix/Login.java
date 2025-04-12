@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +25,9 @@ public class Login extends AppCompatActivity {
     private TextView loginButton, errorMessage, SignupButton;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
+    private ImageView backButton(){
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,13 @@ public class Login extends AppCompatActivity {
                 navigateSignup();
             }
         });
+
+        backButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToMain();
+            }
+        });
     }
 
     private void loginUser() {
@@ -77,7 +88,6 @@ public class Login extends AppCompatActivity {
             return;
         }
 
-        // ✅ Reset CAPTCHA flag in case it was previously verified
         getSharedPreferences("AuthPrefs", MODE_PRIVATE)
                 .edit()
                 .remove("captcha_verified")
@@ -138,6 +148,12 @@ public class Login extends AppCompatActivity {
 
     private void navigateSignup(){
         Intent intent = new Intent(Login.this, Signup.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void navigateToMain(){
+        Intent intent = new Intent(Login.this, MainActivity.class);
         startActivity(intent);
         finish();
     }

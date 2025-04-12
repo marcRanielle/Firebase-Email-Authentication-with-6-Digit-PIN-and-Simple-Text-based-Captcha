@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ public class Signup extends AppCompatActivity {
     private TextView SignupButton, errorMessage, loginButton;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
+    private ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class Signup extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         errorMessage = findViewById(R.id.errorMessage);
         loginButton = findViewById(R.id.loginButton);
+        backButton = findViewById(R.id.backButton);
 
         SignupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +48,13 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 navigateLogin();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToMain();
             }
         });
     }
@@ -105,5 +115,10 @@ public class Signup extends AppCompatActivity {
         Intent intent = new Intent(Signup.this, Login.class);
         startActivity(intent);
         finish();
+    }
+
+    private void navigateToMain(){
+        Intent intent = new Intent(Signup.this, MainActivity.class);
+        startActivity(intent);
     }
 }

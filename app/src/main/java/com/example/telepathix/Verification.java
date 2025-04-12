@@ -30,6 +30,7 @@ public class Verification extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         errorMessage = findViewById(R.id.errorMessage);
         resend = findViewById(R.id.resend);
+        backButton = findViewById(R.id.backButton);
 
         VerifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +43,13 @@ public class Verification extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setResend();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setBackButton();
             }
         });
     }

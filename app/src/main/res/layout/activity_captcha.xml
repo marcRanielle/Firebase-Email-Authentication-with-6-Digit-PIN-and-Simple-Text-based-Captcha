@@ -38,6 +38,7 @@
             android:layout_marginBottom="5dp"
             android:background="@color/palatinate_blue"
             android:hint="Enter CAPTCHA"
+            android:textSize="18dp"
             android:inputType="text"
             android:textColorHint="@color/white" />
 
@@ -48,6 +49,7 @@
             android:layout_height="30dp"
             android:indeterminate="false"
             android:max="60"
+            android:progressTint="@color/golden_yellow"
             android:progress="0"
             android:visibility="gone"/>
 
@@ -75,6 +77,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/golden_yellow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,6 +107,18 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="45dp"
+        android:layout_height="37dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="?attr/homeAsUpIndicator" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

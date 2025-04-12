@@ -21,7 +21,7 @@ import java.util.Random;
 
 public class Captcha extends AppCompatActivity {
 
-    private ImageView captchaImageView;
+    private ImageView captchaImageView, backButton;
     private EditText captchaInput;
     private String captchaText;
     private TextView SubmitButton, errorMessage;
@@ -46,6 +46,7 @@ public class Captcha extends AppCompatActivity {
         timerBar = findViewById(R.id.timerBar);
         errorMessage = findViewById(R.id.errorMessage);
         SubmitButton = findViewById(R.id.SubmitButton);
+        backButton = findViewById(R.id.backButton);
 
         SubmitButton.setOnClickListener(v -> {
             if (isLockedOut) {
@@ -91,6 +92,13 @@ public class Captcha extends AppCompatActivity {
                         }
                     }.start();
                 }
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToLogin();
             }
         });
 
@@ -171,6 +179,12 @@ public class Captcha extends AppCompatActivity {
             errorMessage.setText("");
             generateCaptcha();
         }, lockoutTimeMillis);
+    }
+
+    private void navigateToLogin(){
+        Intent intent = new Intent(Captcha.this, Login.class);
+        startActivity(intent);
+        finish();
     }
 
 }

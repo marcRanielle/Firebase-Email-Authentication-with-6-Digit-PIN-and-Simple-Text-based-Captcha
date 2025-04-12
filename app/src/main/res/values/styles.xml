@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="PinStyle">
+        <item name="android:layout_width">15dp</item>
+        <item name="android:layout_height">15dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:background">@color/palatinate_blue</item>
+        <item name="android:textColor">@color/calamansi</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="KeypadButton">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <style name="LoginButton">
+        <item name="android:fontFamily">@font/titlefont</item>
+        <item name="android:layout_width">137dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="inputBox">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:height">40dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+</resources>

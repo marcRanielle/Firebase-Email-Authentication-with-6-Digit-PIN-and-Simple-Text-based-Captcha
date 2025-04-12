@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "724150364722",
+    "project_id": "telepathix-e30a0",
+    "storage_bucket": "telepathix-e30a0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724150364722:android:2248ddc546cf56f6b6ea2b",
+        "android_client_info": {
+          "package_name": "com.example.telepathix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKLyiyq0SCjgHcxgc7Ceo420tNQb_faP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/calamansi"
+    tools:context=".Signup">
+
+    <EditText
+        android:id="@+id/email"
+        style="@style/inputBox"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/borders"
+        android:ems="10"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/palatinate_blue"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/Pin"
+        style="@style/inputBox"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/borders"
+        android:ems="10"
+        android:hint="6-digit PIN"
+        android:inputType="numberPassword"
+        android:textColorHint="@color/palatinate_blue"
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <EditText
+        android:id="@+id/ConfirmPin"
+        style="@style/inputBox"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/borders"
+        android:ems="10"
+        android:hint="Confirm PIN"
+        android:inputType="numberPassword"
+        android:textColorHint="@color/palatinate_blue"
+        app:layout_constraintEnd_toEndOf="@+id/Pin"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/Pin"
+        app:layout_constraintTop_toBottomOf="@+id/Pin" />
+
+    <TextView
+        android:id="@+id/SignupButton"
+        style="@style/LoginButton"
+        android:layout_width="143dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="56dp"
+        android:background="@color/palatinate_blue"
+        android:text="Sign Up"
+        app:layout_constraintEnd_toEndOf="@+id/errorMessage"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/errorMessage"
+        app:layout_constraintTop_toBottomOf="@+id/errorMessage" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="131dp"
+        android:layout_height="33dp"
+        android:fontFamily="@font/titlefont"
+        android:gravity="center"
+        android:text="REGISTER"
+        android:textColor="@color/palatinate_blue"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/loginButton"
+        android:layout_width="290dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/titlefont"
+        android:gravity="center"
+        android:text="Already have an Account? Sign In"
+        android:textColor="@color/palatinate_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/SignupButton"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="@+id/SignupButton"
+        app:layout_constraintTop_toBottomOf="@+id/SignupButton"
+        app:layout_constraintVertical_bias="0.134" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="298dp"
+        android:layout_height="22dp"
+        android:text=""
+        android:textColor="#8b0000"
+        app:layout_constraintEnd_toEndOf="@+id/ConfirmPin"
+        app:layout_constraintStart_toStartOf="@+id/ConfirmPin"
+        app:layout_constraintTop_toBottomOf="@+id/ConfirmPin" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="212dp"
+        android:layout_height="193dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.029"
+        app:srcCompat="@drawable/iaslogo" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

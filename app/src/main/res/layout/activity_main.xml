@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/calamansi"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tapText"
+        android:layout_width="233dp"
+        android:layout_height="90dp"
+        android:fontFamily="@font/titlefont"
+        android:gravity="center"
+        android:text="TELEPATHIX"
+        android:textColor="@color/palatinate_blue"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="75dp"
+        android:layout_height="62dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="255dp"
+        android:layout_height="228dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/iaslogo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutButtons"
+        android:layout_width="350dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/borders"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tapText"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/tapText"
+        app:layout_constraintTop_toBottomOf="@+id/tapText"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/SignupButton"
+            android:layout_width="156dp"
+            android:layout_height="58dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/palatinate_blue"
+            android:fontFamily="@font/titlefont"
+            android:gravity="center"
+            android:text="Sign up"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/LoginButton"
+            android:layout_width="146dp"
+            android:layout_height="52dp"
+            android:background="@color/white"
+            android:fontFamily="@font/titlefont"
+            android:gravity="center"
+            android:text="Sign in"
+            android:textColor="@color/palatinate_blue"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

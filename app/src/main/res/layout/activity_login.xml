@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/calamansi"
+    tools:context=".Login">
+
+    <EditText
+        android:id="@+id/email"
+        style="@style/inputBox"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/borders"
+        android:ems="10"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/palatinate_blue"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="332dp"
+        android:layout_height="79dp"
+        android:background="@drawable/borders"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+        <EditText
+            android:id="@+id/pin1"
+            style="@style/PinStyle"
+            android:background="@drawable/pinborder"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/palatinate_blue" />
+
+        <EditText
+            android:id="@+id/pin2"
+            style="@style/PinStyle"
+            android:background="@drawable/pinborder"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/palatinate_blue" />
+
+        <EditText
+            android:id="@+id/pin3"
+            style="@style/PinStyle"
+            android:background="@drawable/pinborder"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/palatinate_blue" />
+
+        <EditText
+            android:id="@+id/pin4"
+            style="@style/PinStyle"
+            android:background="@drawable/pinborder"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/palatinate_blue" />
+
+        <EditText
+            android:id="@+id/pin5"
+            style="@style/PinStyle"
+            android:background="@drawable/pinborder"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/palatinate_blue" />
+
+        <EditText
+            android:id="@+id/pin6"
+            style="@style/PinStyle"
+            android:background="@drawable/pinborder"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/palatinate_blue" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/loginButton"
+        style="@style/LoginButton"
+        android:layout_marginTop="52dp"
+        android:background="@color/white"
+        android:text="Sign in"
+        android:textColor="@color/palatinate_blue"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="131dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="LOGIN"
+        android:textColor="@color/palatinate_blue"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="163dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/titlefont"
+        android:gravity="center"
+        android:text="Enter your PIN"
+        android:textColor="@color/palatinate_blue"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/errorMessage"
+        app:layout_constraintStart_toStartOf="@+id/errorMessage"
+        app:layout_constraintTop_toBottomOf="@+id/errorMessage" />
+
+    <TextView
+        android:id="@+id/Signup"
+        android:layout_width="244dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="84dp"
+        android:fontFamily="@font/titlefont"
+        android:gravity="center"
+        android:text="No Account? Sign up"
+        android:textColor="@color/palatinate_blue"
+        app:layout_constraintEnd_toEndOf="@+id/loginButton"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/loginButton"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="236dp"
+        android:layout_height="197dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.029"
+        app:srcCompat="@drawable/iaslogo" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="298dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#8b0000"
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

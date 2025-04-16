@@ -78,13 +78,43 @@
             android:id="@+id/LoginButton"
             android:layout_width="146dp"
             android:layout_height="52dp"
-            android:background="@color/white"
+            android:background="@color/golden_yellow"
             android:fontFamily="@font/titlefont"
             android:gravity="center"
             android:text="Sign in"
-            android:textColor="@color/palatinate_blue"
+            android:textColor="@color/white"
             android:textSize="17dp"
             android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="214dp"
+        android:layout_height="59dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayoutButtons"
+        app:layout_constraintStart_toStartOf="@+id/linearLayoutButtons"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutButtons"
+        app:layout_constraintVertical_bias="0.815">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:fontFamily="monospace"
+            android:text="Marc-RR"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="41dp"
+            android:layout_height="39dp"
+            app:srcCompat="@drawable/raniellelogo" />
+
     </LinearLayout>
 
 

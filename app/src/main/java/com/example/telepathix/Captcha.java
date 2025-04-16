@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class Captcha extends AppCompatActivity {
     private long lockoutTimeMillis = 60000;
     private long lockoutEndTime;
     private Handler handler = new Handler();
+    private Switch showCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class Captcha extends AppCompatActivity {
         errorMessage = findViewById(R.id.errorMessage);
         SubmitButton = findViewById(R.id.SubmitButton);
         backButton = findViewById(R.id.backButton);
+        showCode = findViewById(R.id.showCode);
 
         SubmitButton.setOnClickListener(v -> {
             if (isLockedOut) {
@@ -102,11 +105,20 @@ public class Captcha extends AppCompatActivity {
             }
         });
 
+        showCode.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked){
+                captchaImageView.setVisibility(View.VISIBLE);
+            } else {
+                captchaImageView.setVisibility(View.INVISIBLE);
+            }
+
+        } );
+
     }
 
     private String generateRandomString() {
         int length = 6;
-        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#%&*_-;:/?";
         Random random = new Random();
         StringBuilder captcha = new StringBuilder();
 
@@ -169,7 +181,7 @@ public class Captcha extends AppCompatActivity {
 
         SubmitButton.setEnabled(false);
         captchaInput.setEnabled(false);
-        errorMessage.setText("Too many failed attempts. Please wait 30 seconds.");
+        errorMessage.setText("3 Times failed attempts. Please wait 60 seconds.");
 
         handler.postDelayed(() -> {
             isLockedOut = false;

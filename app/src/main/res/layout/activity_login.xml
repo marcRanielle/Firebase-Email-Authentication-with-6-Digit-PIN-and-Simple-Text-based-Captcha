@@ -12,22 +12,25 @@
         style="@style/inputBox"
         android:layout_width="295dp"
         android:layout_height="48dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/borders"
         android:ems="10"
+        android:textSize="17dp"
+        android:visibility="visible"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/palatinate_blue"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="332dp"
-        android:layout_height="79dp"
+        android:layout_width="305dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/borders"
         android:gravity="center"
+        android:visibility="invisible"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="@+id/textView7"
@@ -36,76 +39,89 @@
         <EditText
             android:id="@+id/pin1"
             style="@style/PinStyle"
+            android:cursorVisible="false"
+            android:textSize="0dp"
             android:background="@drawable/pinborder"
             android:gravity="center"
             android:inputType="number"
             android:maxLength="1"
-            android:textColor="@color/palatinate_blue" />
+            android:textColor="@color/golden_yellow" />
 
         <EditText
             android:id="@+id/pin2"
             style="@style/PinStyle"
+            android:cursorVisible="false"
+            android:textSize="0dp"
             android:background="@drawable/pinborder"
             android:gravity="center"
             android:inputType="number"
             android:maxLength="1"
-            android:textColor="@color/palatinate_blue" />
+            android:textColor="@color/golden_yellow" />
 
         <EditText
             android:id="@+id/pin3"
             style="@style/PinStyle"
+            android:cursorVisible="false"
+            android:textSize="0dp"
             android:background="@drawable/pinborder"
             android:gravity="center"
             android:inputType="number"
             android:maxLength="1"
-            android:textColor="@color/palatinate_blue" />
+            android:textColor="@color/golden_yellow" />
 
         <EditText
             android:id="@+id/pin4"
             style="@style/PinStyle"
+            android:cursorVisible="false"
+            android:textSize="0dp"
             android:background="@drawable/pinborder"
             android:gravity="center"
             android:inputType="number"
             android:maxLength="1"
-            android:textColor="@color/palatinate_blue" />
+            android:textColor="@color/golden_yellow" />
 
         <EditText
             android:id="@+id/pin5"
             style="@style/PinStyle"
+            android:cursorVisible="false"
+            android:textSize="0dp"
             android:background="@drawable/pinborder"
             android:gravity="center"
             android:inputType="number"
             android:maxLength="1"
-            android:textColor="@color/palatinate_blue" />
+            android:textColor="@color/golden_yellow" />
 
         <EditText
             android:id="@+id/pin6"
             style="@style/PinStyle"
+            android:textSize="0dp"
+            android:cursorVisible="false"
             android:background="@drawable/pinborder"
             android:gravity="center"
             android:inputType="number"
             android:maxLength="1"
-            android:textColor="@color/palatinate_blue" />
+            android:textColor="@color/golden_yellow" />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/loginButton"
         style="@style/LoginButton"
-        android:layout_marginTop="52dp"
-        android:background="@color/white"
-        android:text="Sign in"
-        android:textColor="@color/palatinate_blue"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        android:layout_marginTop="84dp"
+        android:background="@color/golden_yellow"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/errorMessage"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/errorMessage"
+        app:layout_constraintTop_toBottomOf="@+id/errorMessage"
+        app:layout_goneMarginTop="20dp" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="131dp"
         android:layout_height="33dp"
-        android:layout_marginTop="4dp"
         android:fontFamily="monospace"
         android:gravity="center"
         android:text="LOGIN"
@@ -113,36 +129,38 @@
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="163dp"
-        android:layout_height="30dp"
+        android:layout_width="231dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/titlefont"
         android:gravity="center"
-        android:text="Enter your PIN"
-        android:textColor="@color/palatinate_blue"
+        android:text="Enter your Email Address"
+        android:textColor="@color/golden_yellow"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/errorMessage"
-        app:layout_constraintStart_toStartOf="@+id/errorMessage"
-        app:layout_constraintTop_toBottomOf="@+id/errorMessage" />
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/Signup"
         android:layout_width="244dp"
         android:layout_height="35dp"
-        android:layout_marginTop="84dp"
         android:fontFamily="@font/titlefont"
         android:gravity="center"
         android:text="No Account? Sign up"
         android:textColor="@color/palatinate_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/loginButton"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/loginButton"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:layout_constraintVertical_bias="0.72" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -163,33 +181,33 @@
         android:gravity="center"
         android:text=""
         android:textColor="#8b0000"
-        app:layout_constraintEnd_toEndOf="@+id/email"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        android:fontFamily="@font/titlefont"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="45dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:indeterminate="true"
         android:indeterminateTint="@color/golden_yellow"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/backButton"
-        android:layout_width="45dp"
-        android:layout_height="37dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="?attr/homeAsUpIndicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

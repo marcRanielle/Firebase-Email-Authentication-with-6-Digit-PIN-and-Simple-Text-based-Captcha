@@ -63,7 +63,8 @@ public class Verification extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     if (user.isEmailVerified()) {
                         Toast.makeText(this, "Email Verified!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Verification.this, Login.class));
+                        Intent intent = new Intent(Verification.this, Login.class);
+                        startActivity(intent);
                         finish();
                     } else {
                         errorMessage.setTextColor(Color.parseColor("#8b0000"));

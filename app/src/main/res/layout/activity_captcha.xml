@@ -10,9 +10,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="385dp"
-        android:layout_height="335dp"
-        android:background="@color/white"
+        android:layout_width="372dp"
+        android:layout_height="375dp"
+        android:background="@drawable/borders"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp"
@@ -25,10 +25,27 @@
 
         <ImageView
             android:id="@+id/captcha_image"
-            android:layout_width="209dp"
-            android:layout_height="54dp"
+            android:layout_width="266dp"
+            android:layout_height="58dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="50dp" />
+            android:layout_marginBottom="10dp"
+            android:visibility="invisible" />
+
+        <Switch
+            android:id="@+id/showCode"
+            android:layout_width="176dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="20dp"
+            android:checked="false"
+            android:fontFamily="@font/titlefont"
+            android:gravity="center"
+            android:text="Show Code"
+            android:textColor="@color/golden_yellow"
+            android:textSize="16dp"
+            android:thumbTint="@color/palatinate_blue"
+            android:trackTint="@color/black"
+            tools:layout_editor_absoluteX="131dp"
+            tools:layout_editor_absoluteY="706dp" />
 
         <EditText
             android:id="@+id/captcha_input"
@@ -37,10 +54,11 @@
             android:layout_height="50dp"
             android:layout_marginBottom="5dp"
             android:background="@color/palatinate_blue"
-            android:hint="Enter CAPTCHA"
-            android:textSize="18dp"
+            android:gravity="center"
+            android:hint="Enter Code"
             android:inputType="text"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/white"
+            android:textSize="17dp" />
 
         <ProgressBar
             android:id="@+id/timerBar"
@@ -49,23 +67,24 @@
             android:layout_height="30dp"
             android:indeterminate="false"
             android:max="60"
-            android:progressTint="@color/golden_yellow"
             android:progress="0"
-            android:visibility="gone"/>
+            android:progressTint="@color/golden_yellow"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/errorMessage"
-            android:layout_width="258dp"
-            android:layout_height="wrap_content"
+            android:layout_width="260dp"
+            android:layout_height="33dp"
             android:layout_marginBottom="40dp"
             android:gravity="center"
+            android:fontFamily="@font/titlefont"
             android:text=""
             android:textColor="#8b0000" />
 
         <TextView
             android:id="@+id/SubmitButton"
             style="@style/LoginButton"
-            android:background="@color/palatinate_blue"
+            android:background="@color/golden_yellow"
             android:text="Submit"
             android:textColor="@color/white" />
 
@@ -86,8 +105,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="259dp"
-        android:layout_height="233dp"
+        android:layout_width="208dp"
+        android:layout_height="199dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,6 +138,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023"
         app:srcCompat="?attr/homeAsUpIndicator" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -120,5 +120,6 @@ public class Signup extends AppCompatActivity {
     private void navigateToMain(){
         Intent intent = new Intent(Signup.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }

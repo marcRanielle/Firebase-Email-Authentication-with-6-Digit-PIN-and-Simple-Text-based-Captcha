@@ -1,18 +1,23 @@
 package com.example.telepathix;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+import android.view.inputmethod.InputMethodManager;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,12 +27,11 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login extends AppCompatActivity {
 
     private EditText emailInput, pin1, pin2, pin3, pin4, pin5, pin6;
-    private TextView loginButton, errorMessage, SignupButton;
+    private TextView loginButton, errorMessage, SignupButton, textView;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
-    private ImageView backButton(){
-
-    }
+    private ImageView backButton;
+    private LinearLayout pinBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,21 +49,36 @@ public class Login extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         errorMessage = findViewById(R.id.errorMessage);
         SignupButton = findViewById(R.id.Signup);
+        backButton = findViewById(R.id.backButton);
+        pinBox = findViewById(R.id.linearLayout);
+        textView = findViewById(R.id.textView7);
 
         auth = FirebaseAuth.getInstance();
 
-        pin1.addTextChangedListener(new SimpleTextWatcher(pin1, pin2));
-        pin2.addTextChangedListener(new SimpleTextWatcher(pin2, pin3));
-        pin3.addTextChangedListener(new SimpleTextWatcher(pin3, pin4));
-        pin4.addTextChangedListener(new SimpleTextWatcher(pin4, pin5));
-        pin5.addTextChangedListener(new SimpleTextWatcher(pin5, pin6));
-        pin6.addTextChangedListener(new SimpleTextWatcher(pin6, null));
+        pin1.addTextChangedListener(new SimpleTextWatcher(pin1, pin2, null));
+        pin2.addTextChangedListener(new SimpleTextWatcher(pin2, pin3, pin1));
+        pin3.addTextChangedListener(new SimpleTextWatcher(pin3, pin4, pin2));
+        pin4.addTextChangedListener(new SimpleTextWatcher(pin4, pin5, pin3));
+        pin5.addTextChangedListener(new SimpleTextWatcher(pin5, pin6, pin4));
+        pin6.addTextChangedListener(new SimpleTextWatcher(pin6, null, pin5));
 
+        EditText[] pins = {pin1, pin2, pin3, pin4, pin5, pin6};
+        for (EditText pin : pins) {
+            pin.setInputType(android.text.InputType.TYPE_CLASS_NUMBER | android.text.InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+        }
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginUser();
+                nextButton();
+
+                loginButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        loginUser();
+                    }
+                });
+
             }
         });
 
@@ -70,7 +89,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        backButton().setOnClickListener(new View.OnClickListener() {
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navigateToMain();
@@ -104,15 +123,19 @@ public class Login extends AppCompatActivity {
 
                         if (user != null) {
                             if (user.isEmailVerified()) {
-                                startActivity(new Intent(Login.this, Captcha.class));
+                                Intent intent = new Intent(Login.this, Captcha.class);
+                                startActivity(intent);
                                 finish();
                             } else {
                                 Toast.makeText(Login.this, "Please verify your email first.", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(Login.this, Verification.class));
+                                Intent intent = new Intent(Login.this, Verification.class);
+                                startActivity(intent);
+                                finish();
                             }
                         }
                     } else {
                         errorMessage.setText("Login failed, Try Again");
+                        reset();
                     }
                 });
     }
@@ -120,28 +143,31 @@ public class Login extends AppCompatActivity {
     public class SimpleTextWatcher implements TextWatcher {
         private EditText nextEditText;
         private EditText currentEditText;
+        private EditText previousEditText;
 
-        public SimpleTextWatcher(EditText currentEditText, EditText nextEditText) {
+        public SimpleTextWatcher(EditText currentEditText, EditText nextEditText, EditText previousEditText) {
             this.currentEditText = currentEditText;
             this.nextEditText = nextEditText;
+            this.previousEditText = previousEditText;
         }
 
         @Override
-        public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {}
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
         @Override
-        public void onTextChanged(CharSequence charSequence, int start, int before, int count) {}
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            if (s.length() == 0 && before == 1 && previousEditText != null) {
+                previousEditText.requestFocus();
+            }
+        }
 
         @Override
-        public void afterTextChanged(Editable editable) {
-            if (editable.length() == 1) {
-                currentEditText.setBackgroundColor(android.graphics.Color.parseColor("#0070ff"));
-
-                if (nextEditText != null) {
-                    nextEditText.requestFocus();
-                }
-            } else if (editable.length() == 0) {
-                currentEditText.setBackgroundColor(android.graphics.Color.WHITE);
+        public void afterTextChanged(Editable s) {
+            if (s.length() == 1) {
+                currentEditText.setBackgroundResource(R.drawable.pinborder2);
+                if (nextEditText != null) nextEditText.requestFocus();
+            } else if (s.length() == 0) {
+                currentEditText.setBackgroundResource(R.drawable.pinborder);
             }
         }
     }
@@ -156,5 +182,51 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(Login.this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void nextButton(){
+        progressBar.setVisibility(View.VISIBLE);
+        String userInput = emailInput.getText().toString().trim();
+
+        if (userInput.isEmpty()) {
+            errorMessage.setText("This field is required!");
+            progressBar.setVisibility(View.GONE);
+        } else {
+            textView.setText("Enter your PIN");
+            loginButton.setText("Sign in");
+            emailInput.setVisibility(View.GONE);
+            errorMessage.setText("");
+            pinBox.setVisibility(View.VISIBLE);
+            pin1.requestFocus();
+
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(pin1, InputMethodManager.SHOW_IMPLICIT);
+
+            progressBar.setVisibility(View.GONE);
+        }
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reset();
+            }
+        });
+    }
+
+    private void reset(){
+        progressBar.setVisibility(View.VISIBLE);
+        textView.setText("Enter your Email Address");
+        loginButton.setText("Next");
+        errorMessage.setText("Your Email or PIN is Incorrect!");
+        emailInput.setVisibility(View.VISIBLE);
+        pinBox.setVisibility(View.GONE);
+        progressBar.setVisibility(View.GONE);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToMain();
+            }
+        });
     }
 }

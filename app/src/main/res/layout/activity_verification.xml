@@ -23,10 +23,10 @@
     <TextView
         android:id="@+id/VerifyButton"
         style="@style/LoginButton"
-        android:layout_marginTop="80dp"
-        android:background="@color/palatinate_blue"
-        android:text="Verify"
+        android:layout_marginTop="104dp"
+        android:background="@color/golden_yellow"
         android:fontFamily="@font/titlefont"
+        android:text="Verified"
         app:layout_constraintEnd_toEndOf="@+id/errorMessage"
         app:layout_constraintStart_toStartOf="@+id/errorMessage"
         app:layout_constraintTop_toBottomOf="@+id/errorMessage" />
@@ -51,7 +51,7 @@
         android:fontFamily="@font/titlefont"
         android:gravity="center"
         android:text="Check your inbox for verification link"
-        android:textColor="@color/palatinate_blue"
+        android:textColor="@color/golden_yellow"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -67,7 +67,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/VerifyButton"
         app:layout_constraintStart_toStartOf="@+id/VerifyButton"
-        app:layout_constraintTop_toBottomOf="@+id/VerifyButton" />
+        app:layout_constraintTop_toBottomOf="@+id/VerifyButton"
+        app:layout_constraintVertical_bias="0.678" />
 
     <ProgressBar
         android:id="@+id/progressBar"

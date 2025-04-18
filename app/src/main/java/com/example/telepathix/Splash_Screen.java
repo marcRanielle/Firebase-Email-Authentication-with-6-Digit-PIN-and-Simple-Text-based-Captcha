@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Splash_Screen extends AppCompatActivity {
 
-    private static final int SPLASH_TIME_OUT = 3000;
+    private static final int SPLASH_TIME_OUT = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

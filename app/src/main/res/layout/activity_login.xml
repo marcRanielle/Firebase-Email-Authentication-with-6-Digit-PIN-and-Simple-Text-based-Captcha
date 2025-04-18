@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/calamansi"
+    android:background="@color/white"
     tools:context=".Login">
 
     <EditText
@@ -14,6 +14,7 @@
         android:layout_height="48dp"
         android:background="@drawable/borders"
         android:ems="10"
+        android:textColor="@color/palatinate_blue"
         android:textSize="17dp"
         android:visibility="visible"
         android:hint="Email Address"

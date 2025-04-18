@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/calamansi"
+    android:background="@color/white"
     tools:context=".Signup">
 
     <EditText
@@ -15,6 +15,7 @@
         android:layout_marginTop="36dp"
         android:background="@drawable/borders"
         android:ems="10"
+        android:textColor="@color/palatinate_blue"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
         android:textSize="17dp"
@@ -31,6 +32,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/borders"
         android:ems="10"
+        android:textColor="@color/palatinate_blue"
         android:textSize="17dp"
         android:hint="6-digit PIN"
         android:inputType="numberPassword"
@@ -48,6 +50,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/borders"
         android:ems="10"
+        android:textColor="@color/palatinate_blue"
         android:textSize="17dp"
         android:hint="Confirm PIN"
         android:inputType="numberPassword"

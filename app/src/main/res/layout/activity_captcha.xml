@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@color/calamansi"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Captcha">
@@ -53,11 +53,12 @@
             android:layout_width="326dp"
             android:layout_height="50dp"
             android:layout_marginBottom="5dp"
-            android:background="@color/palatinate_blue"
+            android:background="@drawable/borders"
             android:gravity="center"
             android:hint="Enter Code"
             android:inputType="text"
-            android:textColorHint="@color/white"
+            android:textColor="@color/palatinate_blue"
+            android:textColorHint="@color/palatinate_blue"
             android:textSize="17dp" />
 
         <ProgressBar

@@ -75,7 +75,7 @@
             android:id="@+id/errorMessage"
             android:layout_width="260dp"
             android:layout_height="33dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center"
             android:fontFamily="@font/titlefont"
             android:text=""
@@ -84,7 +84,7 @@
         <TextView
             android:id="@+id/SubmitButton"
             style="@style/LoginButton"
-            android:background="@color/golden_yellow"
+            android:background="@drawable/buttonborders"
             android:text="Submit"
             android:textColor="@color/white" />
 

@@ -48,37 +48,34 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutButtons"
-        android:layout_width="350dp"
-        android:layout_height="82dp"
-        android:layout_marginTop="120dp"
+        android:layout_width="353dp"
+        android:layout_height="182dp"
         android:background="@drawable/borders"
         android:gravity="center"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tapText"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="@+id/tapText"
         app:layout_constraintTop_toBottomOf="@+id/tapText"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.16">
 
         <TextView
             android:id="@+id/SignupButton"
-            android:layout_width="156dp"
-            android:layout_height="58dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/palatinate_blue"
+            style="@style/LoginButton"
+            android:background="@drawable/buttonborders"
             android:fontFamily="@font/titlefont"
             android:gravity="center"
             android:text="Sign up"
-            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            android:textColor="@color/palatinate_blue"
             android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/LoginButton"
-            android:layout_width="146dp"
-            android:layout_height="52dp"
-            android:background="@color/golden_yellow"
+            style="@style/LoginButton"
+            android:background="@drawable/buttonborders"
             android:fontFamily="@font/titlefont"
             android:gravity="center"
             android:text="Sign in"

@@ -107,13 +107,13 @@
     <TextView
         android:id="@+id/loginButton"
         style="@style/LoginButton"
-        android:layout_marginTop="84dp"
-        android:background="@color/golden_yellow"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/buttonborders"
         android:text="Next"
         android:textColor="@color/white"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/errorMessage"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/errorMessage"
         app:layout_constraintTop_toBottomOf="@+id/errorMessage"
         app:layout_goneMarginTop="20dp" />
@@ -151,16 +151,17 @@
         android:id="@+id/Signup"
         android:layout_width="244dp"
         android:layout_height="35dp"
+        android:layout_marginBottom="50dp"
         android:fontFamily="@font/titlefont"
         android:gravity="center"
         android:text="No Account? Sign up"
         android:textColor="@color/palatinate_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/loginButton"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="@+id/loginButton"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        app:layout_constraintVertical_bias="0.72" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView6"

@@ -24,7 +24,7 @@
         android:id="@+id/VerifyButton"
         style="@style/LoginButton"
         android:layout_marginTop="104dp"
-        android:background="@color/golden_yellow"
+        android:background="@drawable/buttonborders"
         android:fontFamily="@font/titlefont"
         android:text="Verified"
         app:layout_constraintEnd_toEndOf="@+id/errorMessage"
@@ -61,6 +61,7 @@
         android:layout_width="207dp"
         android:layout_height="34dp"
         android:fontFamily="@font/titlefont"
+        android:layout_marginBottom="50dp"
         android:gravity="center"
         android:text="Didn't Receive? Resend"
         android:textColor="@color/palatinate_blue"
@@ -68,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="@+id/VerifyButton"
         app:layout_constraintStart_toStartOf="@+id/VerifyButton"
         app:layout_constraintTop_toBottomOf="@+id/VerifyButton"
-        app:layout_constraintVertical_bias="0.678" />
+        app:layout_constraintVertical_bias="0.984" />
 
     <ProgressBar
         android:id="@+id/progressBar"

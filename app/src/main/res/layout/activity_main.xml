@@ -58,24 +58,27 @@
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="@+id/tapText"
         app:layout_constraintTop_toBottomOf="@+id/tapText"
-        app:layout_constraintVertical_bias="0.16">
+        app:layout_constraintVertical_bias="0.134">
 
         <TextView
             android:id="@+id/SignupButton"
             style="@style/LoginButton"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonborders"
             android:fontFamily="@font/titlefont"
             android:gravity="center"
             android:text="Sign up"
-            android:layout_margin="20dp"
-            android:textColor="@color/palatinate_blue"
+            android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/LoginButton"
             style="@style/LoginButton"
-            android:background="@drawable/buttonborders"
+            android:layout_width="270dp"
+            android:layout_height="49dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/mainsignin"
             android:fontFamily="@font/titlefont"
             android:gravity="center"
             android:text="Sign in"

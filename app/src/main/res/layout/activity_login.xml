@@ -108,15 +108,16 @@
     <TextView
         android:id="@+id/loginButton"
         style="@style/LoginButton"
-        android:layout_marginTop="8dp"
         android:background="@drawable/buttonborders"
         android:text="Next"
         android:textColor="@color/white"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/errorMessage"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/errorMessage"
-        app:layout_constraintTop_toBottomOf="@+id/errorMessage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.654"
         app:layout_goneMarginTop="20dp" />
 
     <TextView
@@ -180,13 +181,14 @@
         android:id="@+id/errorMessage"
         android:layout_width="298dp"
         android:layout_height="22dp"
+        android:fontFamily="@font/titlefont"
         android:gravity="center"
         android:text=""
+        android:visibility="visible"
         android:textColor="#8b0000"
-        android:fontFamily="@font/titlefont"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <ImageView
         android:id="@+id/backButton"
@@ -211,5 +213,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/errorMessage2"
+        android:layout_width="298dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:text=""
+        android:visibility="invisible"
+        android:textColor="#8b0000"
+        android:fontFamily="@font/titlefont"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

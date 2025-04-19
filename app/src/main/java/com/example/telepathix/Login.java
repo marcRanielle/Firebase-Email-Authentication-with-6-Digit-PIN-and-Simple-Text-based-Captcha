@@ -27,7 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login extends AppCompatActivity {
 
     private EditText emailInput, pin1, pin2, pin3, pin4, pin5, pin6;
-    private TextView loginButton, errorMessage, SignupButton, textView;
+    private TextView loginButton, errorMessage, SignupButton, textView, errorMessage2;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
     private ImageView backButton;
@@ -52,6 +52,7 @@ public class Login extends AppCompatActivity {
         backButton = findViewById(R.id.backButton);
         pinBox = findViewById(R.id.linearLayout);
         textView = findViewById(R.id.textView7);
+        errorMessage2 = findViewById(R.id.errorMessage2);
 
         auth = FirebaseAuth.getInstance();
 
@@ -134,8 +135,16 @@ public class Login extends AppCompatActivity {
                             }
                         }
                     } else {
-                        errorMessage.setText("Login failed, Try Again");
-                        reset();
+                        pin1.setText("");
+                        pin2.setText("");
+                        pin3.setText("");
+                        pin4.setText("");
+                        pin5.setText("");
+                        pin6.setText("");
+
+                        pin1.requestFocus();
+
+                        errorMessage2.setText("Login failed, Try Again");
                     }
                 });
     }
@@ -188,20 +197,30 @@ public class Login extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         String userInput = emailInput.getText().toString().trim();
 
-        if (userInput.isEmpty()) {
-            errorMessage.setText("This field is required!");
-            progressBar.setVisibility(View.GONE);
-        } else {
+        if (!userInput.isEmpty()) {
             textView.setText("Enter your PIN");
             loginButton.setText("Sign in");
             emailInput.setVisibility(View.GONE);
-            errorMessage.setText("");
+            errorMessage.setVisibility(View.VISIBLE);
             pinBox.setVisibility(View.VISIBLE);
+            pin1.requestFocus();
+            errorMessage2.setVisibility(View.VISIBLE);
+            errorMessage2.setText("");
+
+            pin1.setText("");
+            pin2.setText("");
+            pin3.setText("");
+            pin4.setText("");
+            pin5.setText("");
+            pin6.setText("");
             pin1.requestFocus();
 
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.showSoftInput(pin1, InputMethodManager.SHOW_IMPLICIT);
 
+            progressBar.setVisibility(View.GONE);
+        } else {
+            errorMessage.setText("This field is required!");
             progressBar.setVisibility(View.GONE);
         }
 
@@ -213,14 +232,40 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    private void reset(){
+    private void reset() {
+        emailInput.setText("");
+        emailInput.clearFocus();
+        emailInput.setError(null);
+
         progressBar.setVisibility(View.VISIBLE);
         textView.setText("Enter your Email Address");
         loginButton.setText("Next");
-        errorMessage.setText("Your Email or PIN is Incorrect!");
+        errorMessage.setText("");
+        errorMessage.setVisibility(View.INVISIBLE);
         emailInput.setVisibility(View.VISIBLE);
         pinBox.setVisibility(View.GONE);
+        errorMessage2.setVisibility(View.INVISIBLE);
         progressBar.setVisibility(View.GONE);
+
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.showSoftInput(emailInput, InputMethodManager.SHOW_IMPLICIT);
+        }
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextButton();
+
+                loginButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        loginUser();
+                    }
+                });
+
+            }
+        });
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -229,4 +274,5 @@ public class Login extends AppCompatActivity {
             }
         });
     }
+
 }

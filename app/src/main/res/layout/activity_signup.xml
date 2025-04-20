@@ -10,7 +10,7 @@
     <EditText
         android:id="@+id/email"
         style="@style/inputBox"
-        android:layout_width="295dp"
+        android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="36dp"
         android:background="@drawable/borders"
@@ -19,7 +19,7 @@
         android:hint="Email Address"
         android:inputType="textEmailAddress"
         android:textSize="17dp"
-        android:textColorHint="@color/palatinate_blue"
+        android:textColorHint="@color/light_gray"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -27,7 +27,7 @@
     <EditText
         android:id="@+id/Pin"
         style="@style/inputBox"
-        android:layout_width="295dp"
+        android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/borders"
@@ -36,7 +36,7 @@
         android:textSize="17dp"
         android:hint="6-digit PIN"
         android:inputType="numberPassword"
-        android:textColorHint="@color/palatinate_blue"
+        android:textColorHint="@color/light_gray"
         app:layout_constraintEnd_toEndOf="@+id/email"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/email"
@@ -45,7 +45,7 @@
     <EditText
         android:id="@+id/ConfirmPin"
         style="@style/inputBox"
-        android:layout_width="295dp"
+        android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/borders"
@@ -54,7 +54,7 @@
         android:textSize="17dp"
         android:hint="Confirm PIN"
         android:inputType="numberPassword"
-        android:textColorHint="@color/palatinate_blue"
+        android:textColorHint="@color/light_gray"
         app:layout_constraintEnd_toEndOf="@+id/Pin"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/Pin"

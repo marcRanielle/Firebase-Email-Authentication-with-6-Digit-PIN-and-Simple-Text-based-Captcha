@@ -41,7 +41,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/titlefont"
         android:gravity="center"
-        android:text="TELEPATHIX"
+        android:text="TELEPATHIX?"
         android:textColor="@color/palatinate_blue"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView5"

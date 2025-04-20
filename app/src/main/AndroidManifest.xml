@@ -10,16 +10,13 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/iaslogo"
-        android:label="@string/app_name"
+        android:label="TelepathiX"
         android:roundIcon="@drawable/iaslogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Telepathix"
         tools:targetApi="31">
         <activity
             android:name=".SignupDone"
-            android:exported="false" />
-        <activity
-            android:name=".EmailLogin"
             android:exported="false" />
         <activity
             android:name=".Splash_Screen"

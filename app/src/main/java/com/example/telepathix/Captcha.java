@@ -53,7 +53,7 @@ public class Captcha extends AppCompatActivity {
 
         SubmitButton.setOnClickListener(v -> {
             if (isLockedOut) {
-                Toast.makeText(Captcha.this, "Too many failed attempts. Please wait.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Captcha.this, "3 failed attempts. Please wait.", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -61,11 +61,11 @@ public class Captcha extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
 
             if (userInput.equals(captchaText)) {
-                Toast.makeText(Captcha.this, "CAPTCHA Verified!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Captcha.this, "Verified your Human!", Toast.LENGTH_SHORT).show();
                 navigateToHomepage();
             } else {
                 failedAttempts++;
-                errorMessage.setText("Incorrect CAPTCHA, Try Again.");
+                errorMessage.setText("Incorrect Code, Try Again.");
                 captchaInput.setText("");
                 progressBar.setVisibility(View.GONE);
                 generateCaptcha();
@@ -80,7 +80,7 @@ public class Captcha extends AppCompatActivity {
                     new android.os.CountDownTimer(60000, 1000) {
                         public void onTick(long millisUntilFinished) {
                             int secondsLeft = (int) (millisUntilFinished / 1000);
-                            errorMessage.setText("Too many failed attempts. Please wait " + secondsLeft + " seconds.");
+                            errorMessage.setText("3 failed attempts. Please wait " + secondsLeft + " seconds.");
                             timerBar.setProgress(secondsLeft);
                         }
 

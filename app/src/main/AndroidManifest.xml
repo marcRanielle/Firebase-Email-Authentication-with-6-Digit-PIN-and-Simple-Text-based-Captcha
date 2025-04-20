@@ -9,9 +9,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/iaslogo"
+        android:icon="@drawable/mylogo"
         android:label="TelepathiX"
-        android:roundIcon="@drawable/iaslogo"
+        android:roundIcon="@drawable/mylogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Telepathix"
         tools:targetApi="31">

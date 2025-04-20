@@ -114,7 +114,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.032"
-        app:srcCompat="@drawable/iaslogo" />
+        app:srcCompat="@drawable/mylogo" />
 
     <TextView
         android:id="@+id/textView4"

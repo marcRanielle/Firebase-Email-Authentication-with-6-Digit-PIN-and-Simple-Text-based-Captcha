@@ -17,7 +17,7 @@
         android:layout_marginTop="255dp"
         android:layout_marginEnd="152dp"
         android:layout_marginBottom="372dp"
-        android:src="@drawable/iaslogo" />
+        android:src="@drawable/mylogo" />
 
     <LinearLayout
         android:layout_width="325dp"

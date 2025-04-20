@@ -27,7 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login extends AppCompatActivity {
 
     private EditText emailInput, pin1, pin2, pin3, pin4, pin5, pin6;
-    private TextView loginButton, errorMessage, SignupButton, textView, errorMessage2;
+    private TextView loginButton, errorMessage, SignupButton, textView, errorMessage2, loginButton2;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
     private ImageView backButton;
@@ -53,6 +53,7 @@ public class Login extends AppCompatActivity {
         pinBox = findViewById(R.id.linearLayout);
         textView = findViewById(R.id.textView7);
         errorMessage2 = findViewById(R.id.errorMessage2);
+        loginButton2 = findViewById(R.id.loginButton2);
 
         auth = FirebaseAuth.getInstance();
 
@@ -72,13 +73,6 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 nextButton();
-
-                loginButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        loginUser();
-                    }
-                });
 
             }
         });
@@ -199,13 +193,14 @@ public class Login extends AppCompatActivity {
 
         if (!userInput.isEmpty()) {
             textView.setText("Enter your PIN");
-            loginButton.setText("Sign in");
+            loginButton.setVisibility(View.INVISIBLE);
             emailInput.setVisibility(View.GONE);
-            errorMessage.setVisibility(View.VISIBLE);
+            errorMessage.setVisibility(View.INVISIBLE);
             pinBox.setVisibility(View.VISIBLE);
             pin1.requestFocus();
             errorMessage2.setVisibility(View.VISIBLE);
             errorMessage2.setText("");
+            loginButton2.setVisibility(View.VISIBLE);
 
             pin1.setText("");
             pin2.setText("");
@@ -224,6 +219,13 @@ public class Login extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
         }
 
+        loginButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginUser();
+            }
+        });
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -239,12 +241,13 @@ public class Login extends AppCompatActivity {
 
         progressBar.setVisibility(View.VISIBLE);
         textView.setText("Enter your Email Address");
-        loginButton.setText("Next");
         errorMessage.setText("");
-        errorMessage.setVisibility(View.INVISIBLE);
+        errorMessage.setVisibility(View.VISIBLE);
         emailInput.setVisibility(View.VISIBLE);
         pinBox.setVisibility(View.GONE);
         errorMessage2.setVisibility(View.INVISIBLE);
+        loginButton.setVisibility(View.VISIBLE);
+        loginButton2.setVisibility(View.INVISIBLE);
         progressBar.setVisibility(View.GONE);
 
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -256,13 +259,6 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 nextButton();
-
-                loginButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        loginUser();
-                    }
-                });
 
             }
         });

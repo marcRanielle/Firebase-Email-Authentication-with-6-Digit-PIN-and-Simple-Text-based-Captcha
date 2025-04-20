@@ -11,57 +11,73 @@
         android:id="@+id/logout"
         android:layout_width="135dp"
         android:layout_height="42dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="152dp"
         android:background="#8b0000"
         android:gravity="center"
         android:text="Logout"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="155dp"
         android:layout_height="154dp"
-        android:background="@drawable/pinborder2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213"
+        app:layout_constraintVertical_bias="0.183"
         app:srcCompat="@drawable/iaslogo" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="267dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/titlefont"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="220dp"
+        android:layout_height="76dp"
         android:gravity="center"
-        android:text="TELEPATHIX?"
-        android:textColor="@color/palatinate_blue"
-        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView5"
         app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5">
+
+        <TextView
+            android:id="@+id/tapText"
+            android:layout_width="wrap_content"
+            android:layout_height="76dp"
+            android:fontFamily="@font/titlefont"
+            android:gravity="center"
+            android:text="Telepathix"
+            android:textColor="@color/palatinate_blue"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="90dp"
+            tools:layout_editor_absoluteY="228dp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:gravity="center"
+            android:text=" ? "
+            android:textStyle="bold"
+            android:textColor="@color/golden_yellow"
+            android:textSize="25dp"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="549dp" />
+
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:indeterminate="true"
         android:indeterminateTint="@color/golden_yellow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585" />
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="214dp"
@@ -71,10 +87,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/logout"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="@+id/logout"
         app:layout_constraintTop_toBottomOf="@+id/logout"
-        app:layout_constraintVertical_bias="0.791">
+        app:layout_constraintVertical_bias="0.911">
 
         <TextView
             android:id="@+id/textView3"

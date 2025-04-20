@@ -31,7 +31,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/borders"
         android:gravity="center"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="@+id/textView7"
@@ -108,16 +108,15 @@
     <TextView
         android:id="@+id/loginButton"
         style="@style/LoginButton"
+        android:layout_marginTop="4dp"
         android:background="@drawable/buttonborders"
         android:text="Next"
         android:textColor="@color/white"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView7"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toTopOf="@+id/email"
-        app:layout_constraintVertical_bias="0.356"
+        app:layout_constraintEnd_toEndOf="@+id/errorMessage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/errorMessage"
+        app:layout_constraintTop_toBottomOf="@+id/errorMessage"
         app:layout_goneMarginTop="20dp" />
 
     <TextView
@@ -226,6 +225,19 @@
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/loginButton2"
+        style="@style/LoginButton"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/buttonborders"
+        android:text="Sign in"
+        android:textColor="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/errorMessage2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/errorMessage2"
+        app:layout_constraintTop_toBottomOf="@+id/errorMessage2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,58 +7,39 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tapText"
-        android:layout_width="233dp"
-        android:layout_height="90dp"
-        android:fontFamily="@font/titlefont"
-        android:gravity="center"
-        android:text="Telepathix?"
-        android:textColor="@color/palatinate_blue"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.0" />
-
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="75dp"
         android:layout_height="62dp"
-        android:visibility="gone"
         android:indeterminate="true"
         android:indeterminateTint="@color/golden_yellow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayoutButtons"
+        app:layout_constraintStart_toStartOf="@+id/linearLayoutButtons"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutButtons" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="255dp"
-        android:layout_height="228dp"
+        android:layout_width="244dp"
+        android:layout_height="202dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.031"
         app:srcCompat="@drawable/iaslogo" />
 
     <LinearLayout
         android:id="@+id/linearLayoutButtons"
-        android:layout_width="386dp"
-        android:layout_height="184dp"
+        android:layout_width="381dp"
+        android:layout_height="185dp"
         android:background="@drawable/borders"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tapText"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="@+id/tapText"
-        app:layout_constraintTop_toBottomOf="@+id/tapText"
-        app:layout_constraintVertical_bias="0.134">
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <TextView
             android:id="@+id/SignupButton"
@@ -87,19 +68,23 @@
             android:textColor="@color/white"
             android:textSize="17dp"
             android:textStyle="bold" />
+
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="214dp"
         android:layout_height="59dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayoutButtons"
-        app:layout_constraintStart_toStartOf="@+id/linearLayoutButtons"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutButtons"
-        app:layout_constraintVertical_bias="0.815">
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.95">
 
         <TextView
             android:id="@+id/textView3"
@@ -116,6 +101,43 @@
             android:layout_width="41dp"
             android:layout_height="39dp"
             app:srcCompat="@drawable/raniellelogo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="213dp"
+        android:layout_height="77dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4">
+
+
+        <TextView
+            android:id="@+id/tapText"
+            android:layout_width="wrap_content"
+            android:layout_height="76dp"
+            android:fontFamily="@font/titlefont"
+            android:gravity="center"
+            android:text="Telepathix"
+            android:textColor="@color/palatinate_blue"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="90dp"
+            tools:layout_editor_absoluteY="228dp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:gravity="center"
+            android:text=" ? "
+            android:textStyle="bold"
+            android:textColor="@color/golden_yellow"
+            android:textSize="25dp"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="549dp" />
 
     </LinearLayout>
 
